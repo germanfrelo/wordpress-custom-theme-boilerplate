@@ -1,0 +1,227 @@
+/**
+ * Theme Name:   ________________________________________
+ * Template:     ________________________________________
+ * Description:  Custom child theme for ________________.
+ * Version:      1.0.0
+ * Author:       ________________________________________
+ * Author URI:   ________________________________________
+ * Tested up to: ________
+ * License:      GNU General Public License v2 or later
+ * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/**
+ * ============================================================
+ * TABLE OF CONTENTS:
+ *
+ * 1. Global Custom Properties
+ * 2. Global Styles
+ * 3. Local/Scoped Styles
+ *
+ * @link https://every-layout.dev/rudiments/global-and-local-styling/
+ * @link https://cube.fyi/
+ * ============================================================
+ */
+
+/**
+ * ============================================================
+ * 1. Global Custom Properties
+ * ============================================================
+ */
+
+:root {
+	/**
+	 * Viewport Widths
+	 */
+
+	--viewport-min: 375px;
+	--viewport-max: 1440px;
+
+	/**
+	 * Fluid Type Scale
+	 * @link https://utopia.fyi/type/calculator?c=375,16,1.2,1440,18,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+	 */
+
+	/* Step -1: 13.3333px → 14.4px */
+	--step--1: clamp(0.8333rem, 0.8099rem + 0.1002vw, 0.9rem);
+
+	/* Step 0: 16px → 18px */
+	--step-0: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+
+	/* Step 1: 19.2px → 22.5px */
+	--step-1: clamp(1.2rem, 1.1274rem + 0.3099vw, 1.4063rem);
+
+	/* Step 2: 23.04px → 28.125px */
+	--step-2: clamp(1.44rem, 1.3281rem + 0.4775vw, 1.7578rem);
+
+	/* Step 3: 27.648px → 35.1563px */
+	--step-3: clamp(1.728rem, 1.5628rem + 0.705vw, 2.1973rem);
+
+	/* Step 4: 33.1776px → 43.9453px */
+	--step-4: clamp(2.0736rem, 1.8366rem + 1.0111vw, 2.7466rem);
+
+	/* Step 5: 39.8131px → 54.9316px */
+	--step-5: clamp(2.4883rem, 2.1556rem + 1.4196vw, 3.4332rem);
+
+	/**
+	 * Fluid Spacing Scale
+	 * @link https://utopia.fyi/space/calculator?c=375,16,1.2,1440,18,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+	 */
+
+	/* Space 3xs: 4px → 5px */
+	--space-3xs: clamp(0.25rem, 0.228rem + 0.0939vw, 0.3125rem);
+
+	/* Space 2xs: 8px → 9px */
+	--space-2xs: clamp(0.5rem, 0.478rem + 0.0939vw, 0.5625rem);
+
+	/* Space xs: 12px → 14px */
+	--space-xs: clamp(0.75rem, 0.706rem + 0.1878vw, 0.875rem);
+
+	/* Space s: 16px → 18px */
+	--space-s: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+
+	/* Space m: 24px → 27px */
+	--space-m: clamp(1.5rem, 1.434rem + 0.2817vw, 1.6875rem);
+
+	/* Space l: 32px → 36px */
+	--space-l: clamp(2rem, 1.912rem + 0.3756vw, 2.25rem);
+
+	/* Space xl: 48px → 54px */
+	--space-xl: clamp(3rem, 2.868rem + 0.5634vw, 3.375rem);
+
+	/* Space 2xl: 64px → 72px */
+	--space-2xl: clamp(4rem, 3.8239rem + 0.7512vw, 4.5rem);
+
+	/* Space 3xl: 96px → 108px */
+	--space-3xl: clamp(6rem, 5.7359rem + 1.1268vw, 6.75rem);
+
+	/* One-up pairs */
+
+	/* Space 3xs-2xs: 4px → 9px */
+	--space-3xs-2xs: clamp(0.25rem, 0.14rem + 0.4695vw, 0.5625rem);
+
+	/* Space 2xs-xs: 8px → 14px */
+	--space-2xs-xs: clamp(0.5rem, 0.368rem + 0.5634vw, 0.875rem);
+
+	/* Space xs-s: 12px → 18px */
+	--space-xs-s: clamp(0.75rem, 0.618rem + 0.5634vw, 1.125rem);
+
+	/* Space s-m: 16px → 27px */
+	--space-s-m: clamp(1rem, 0.7579rem + 1.0329vw, 1.6875rem);
+
+	/* Space m-l: 24px → 36px */
+	--space-m-l: clamp(1.5rem, 1.2359rem + 1.1268vw, 2.25rem);
+
+	/* Space l-xl: 32px → 54px */
+	--space-l-xl: clamp(2rem, 1.5158rem + 2.0657vw, 3.375rem);
+
+	/* Space xl-2xl: 48px → 72px */
+	--space-xl-2xl: clamp(3rem, 2.4718rem + 2.2535vw, 4.5rem);
+
+	/* Space 2xl-3xl: 64px → 108px */
+	--space-2xl-3xl: clamp(4rem, 3.0317rem + 4.1315vw, 6.75rem);
+
+	/* Custom pairs */
+
+	/* Space s-l: 16px → 36px */
+	--space-s-l: clamp(1rem, 0.5599rem + 1.8779vw, 2.25rem);
+
+	/**
+	 * Custom Fluid Tokens
+	 * @link https://utopia.fyi/clamp/calculator?a=375,1440
+	 */
+
+	/**
+	 * Another Custom Properties
+	 */
+
+	--icon-min-size: 44px;
+	--site-logo-block-size: var(____, auto);
+}
+
+/**
+ * ============================================================
+ * 2. Global Styles
+ *
+ * Grouped by function based on https://html.spec.whatwg.org/multipage/#toc-semantics.
+ * ============================================================
+ */
+
+/*
+ * <html> & all elements
+ */
+
+/* To better compare website with design in Figma on macOS */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Better focus indicators (see https://www.sarasoueidan.com/blog/focus-indicators/) */
+*:focus-visible {
+	outline: 0.375rem double #000;
+	box-shadow: 0 0 0 0.25rem #fff;
+}
+
+/*
+ * Sections
+ */
+
+/*
+ * Grouping content
+ */
+
+/*
+ * Text-level semantics
+ */
+
+/*
+ * Embedded content
+ */
+
+/*
+ * Tabular data
+ */
+
+/*
+ * Forms
+ */
+
+/*
+ * Interactive elements
+ */
+
+/*
+ * Scripting
+ */
+
+/**
+ * ============================================================
+ * 3. Local/Scoped Styles
+ * ============================================================
+ */
+
+/**
+ * Make the main content fill the available vertical space so that if the main content is shorter than the height of the viewport, the footer "sticks" to the bottom.
+ */
+
+.wp-site-blocks:has(> main) {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.wp-site-blocks > main {
+	flex-grow: 1;
+}
+
+.wp-site-blocks:has(> main) > * {
+	flex-shrink: 0;
+}
+
+/**
+ * Prevent icons from shrinking when they are flex items.
+ */
+
+.is-layout-flex > [class*="icon"] {
+	flex-shrink: 0;
+}
